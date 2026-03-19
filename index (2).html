@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Pediátrica — Guía Completa Sinaloa</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #f7f5f0;
+  --bg2: #ffffff;
+  --bg3: #eef0f5;
+  --border: #dddad4;
+  --text: #1c1917;
+  --text2: #57534e;
+  --text3: #a8a29e;
+  --ira-h: #0c4a6e;
+  --ira-m: #0284c7;
+  --ira-l: #e0f2fe;
+  --ira-a: #38bdf8;
+  --dia-h: #14532d;
+  --dia-m: #16a34a;
+  --dia-l: #dcfce7;
+  --dia-a: #4ade80;
+  --den-h: #7c2d12;
+  --den-m: #ea580c;
+  --den-l: #fff7ed;
+  --den-a: #fb923c;
+  --red: #dc2626;
+  --red-l: #fef2f2;
+  --amber: #d97706;
+  --amber-l: #fffbeb;
+  --green: #16a34a;
+  --green-l: #f0fdf4;
+  --purple: #7c3aed;
+  --purple-l: #f5f3ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+/* ── NAV ── */
+.sidenav {
+  position: fixed; left: 0; top: 0; bottom: 0;
+  width: 220px; background: var(--text);
+  overflow-y: auto; z-index: 100; padding: 20px 0;
+  scrollbar-width: thin; scrollbar-color: #555 transparent;
+}
+.sidenav-logo {
+  font-family: 'Fraunces', serif;
+  color: #fff; font-size: 15px; font-weight: 600;
+  padding: 0 18px 20px; border-bottom: 1px solid #333;
+  margin-bottom: 12px; line-height: 1.3;
+}
+.sidenav-logo span { color: var(--ira-a); display: block; font-size: 11px; font-weight: 300; margin-top: 3px; }
+.nav-group { margin-bottom: 4px; }
+.nav-group-title {
+  font-size: 9px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 1px; color: #666; padding: 10px 18px 4px;
+}
+.nav-item {
+  display: block; padding: 7px 18px; color: #bbb;
+  cursor: pointer; font-size: 12.5px; transition: all .15s;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+.nav-item:hover { color: #fff; background: #2a2a2a; }
+.nav-item.active { color: #fff; border-left-color: var(--ira-a); background: #222; }
+.nav-item.ira.active { border-left-color: var(--ira-a); }
+.nav-item.dia.active { border-left-color: var(--dia-a); }
+.nav-item.den.active { border-left-color: var(--den-a); }
+
+/* ── MAIN ── */
+.main { margin-left: 220px; padding: 0; }
+
+/* ── SECTIONS ── */
+.section { display: none; padding: 32px 36px 60px; max-width: 880px; }
+.section.active { display: block; }
+
+/* ── SECTION HEADER ── */
+.sec-header {
+  margin-bottom: 28px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.sec-header h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 32px; font-weight: 600; line-height: 1.2;
+  margin-bottom: 6px;
+}
+.sec-header p { color: var(--text2); font-size: 14px; }
+.sec-badge {
+  display: inline-block; padding: 3px 10px; border-radius: 99px;
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .5px; margin-bottom: 10px;
+}
+.ira-badge { background: var(--ira-l); color: var(--ira-h); }
+.dia-badge { background: var(--dia-l); color: var(--dia-h); }
+.den-badge { background: var(--den-l); color: var(--den-h); }
+
+/* ── TOPIC CARD ── */
+.topic {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; margin-bottom: 18px; overflow: hidden;
+}
+.topic-header {
+  padding: 14px 20px; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background .15s;
+}
+.topic-header:hover { background: var(--bg3); }
+.topic-title {
+  font-size: 15px; font-weight: 600; color: var(--text);
+  display: flex; align-items: center; gap: 10px;
+}
+.topic-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; flex-shrink: 0;
+}
+.ira-icon { background: var(--ira-l); }
+.dia-icon { background: var(--dia-l); }
+.den-icon { background: var(--den-l); }
+.topic-chevron { color: var(--text3); transition: transform .25s; font-size: 12px; }
+.topic.open .topic-chevron { transform: rotate(180deg); }
+.topic-body { display: none; padding: 0 20px 20px; }
+.topic.open .topic-body { display: block; }
+
+/* ── CONTENT BLOCKS ── */
+h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 19px; font-weight: 600;
+  margin: 20px 0 10px; color: var(--text);
+}
+h3 { font-size: 14px; font-weight: 600; margin: 14px 0 7px; color: var(--text); }
+p { margin-bottom: 10px; color: var(--text); }
+ul, ol { padding-left: 18px; margin-bottom: 12px; }
+li { margin-bottom: 4px; }
+strong { font-weight: 600; }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+
+/* ── ALERT BOXES ── */
+.alert {
+  border-radius: 8px; padding: 12px 16px; margin: 12px 0;
+  font-size: 13.5px; display: flex; gap: 10px; align-items: flex-start;
+}
+.alert-icon { font-size: 16px; flex-shrink: 0; }
+.alert.danger { background: var(--red-l); border-left: 3px solid var(--red); }
+.alert.danger .alert-icon, .alert.danger strong { color: var(--red); }
+.alert.warning { background: var(--amber-l); border-left: 3px solid var(--amber); }
+.alert.warning .alert-icon, .alert.warning strong { color: var(--amber); }
+.alert.success { background: var(--green-l); border-left: 3px solid var(--green); }
+.alert.success .alert-icon, .alert.success strong { color: var(--green); }
+.alert.info { background: var(--purple-l); border-left: 3px solid var(--purple); }
+.alert.info .alert-icon, .alert.info strong { color: var(--purple); }
+
+/* ── TABLES ── */
+.tbl { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13.5px; }
+.tbl th {
+  background: var(--bg3); padding: 9px 12px; text-align: left;
+  font-weight: 600; font-size: 12px; text-transform: uppercase;
+  letter-spacing: .4px; color: var(--text2);
+  border-bottom: 2px solid var(--border);
+}
+.tbl td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tr:hover td { background: var(--bg3); }
+.tbl .hl { font-weight: 600; color: var(--text); }
+
+/* ── SCORE CARDS ── */
+.score-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+.score-item {
+  background: var(--bg3); border-radius: 8px; padding: 12px 14px;
+  border: 1px solid var(--border);
+}
+.score-item h4 { font-size: 12px; font-weight: 600; color: var(--text2); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .4px; }
+.score-item p { font-size: 13.5px; margin: 0; }
+
+/* ── PILL TAGS ── */
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.tag {
+  padding: 3px 10px; border-radius: 99px; font-size: 12px; font-weight: 500;
+}
+.tag-blue { background: var(--ira-l); color: var(--ira-h); }
+.tag-green { background: var(--dia-l); color: var(--dia-h); }
+.tag-red { background: var(--red-l); color: var(--red); }
+.tag-amber { background: var(--amber-l); color: var(--amber); }
+.tag-purple { background: var(--purple-l); color: var(--purple); }
+.tag-orange { background: var(--den-l); color: var(--den-h); }
+
+/* ── COMPARISON COLS ── */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+.compare-col { border-radius: 8px; padding: 14px; }
+.compare-col.left { background: var(--ira-l); }
+.compare-col.right { background: #fce7f3; }
+.compare-col h4 { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.compare-col.left h4 { color: var(--ira-h); }
+.compare-col.right h4 { color: #9d174d; }
+
+/* ── STEP FLOW ── */
+.steps { margin: 12px 0; }
+.step {
+  display: flex; gap: 12px; margin-bottom: 10px;
+}
+.step-num {
+  min-width: 26px; height: 26px; border-radius: 50%;
+  background: var(--ira-m); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+.step-num.green { background: var(--dia-m); }
+.step-num.orange { background: var(--den-m); }
+.step-content { font-size: 13.5px; }
+
+/* ── DOSIS HIGHLIGHT ── */
+.dosis {
+  display: inline-block; background: #1c1917; color: #fff;
+  padding: 1px 8px; border-radius: 4px; font-size: 13px;
+  font-family: monospace; letter-spacing: .3px;
+}
+
+@media (max-width: 700px) {
+  .sidenav { display: none; }
+  .main { margin-left: 0; }
+  .section { padding: 20px 16px 40px; }
+  .score-grid, .compare { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDENAV -->
+<nav class="sidenav">
+  <div class="sidenav-logo">Clínica Pediátrica<span>Sinaloa · Guía Clínica</span></div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">IRA</div>
+    <a class="nav-item ira active" onclick="show('ira-clasificacion',this)">Clasificación IRA alta vs baja</a>
+    <a class="nav-item ira" onclick="show('ira-signos',this)">Signos de alarma respiratoria</a>
+    <a class="nav-item ira" onclick="show('ira-bronquiolitis',this)">Bronquiolitis VSR</a>
+    <a class="nav-item ira" onclick="show('ira-neumonia',this)">Neumonía adq. comunidad</a>
+    <a class="nav-item ira" onclick="show('ira-faringoamigdalitis',this)">Faringoamigdalitis</a>
+    <a class="nav-item ira" onclick="show('ira-otitis',this)">Otitis media aguda</a>
+    <a class="nav-item ira" onclick="show('ira-atb',this)">Uso racional de antibióticos</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">Diarrea</div>
+    <a class="nav-item dia" onclick="show('dia-clasificacion',this)">Clasificación de diarreas</a>
+    <a class="nav-item dia" onclick="show('dia-gorelick',this)">Escala Gorelick / Plan A-B-C</a>
+    <a class="nav-item dia" onclick="show('dia-sro',this)">Sales de rehidratación oral</a>
+    <a class="nav-item dia" onclick="show('dia-iv',this)">Criterios hospitaliz. / IV</a>
+    <a class="nav-item dia" onclick="show('dia-etiologia',this)">Etiología por edad</a>
+    <a class="nav-item dia" onclick="show('dia-atb',this)">Cuándo dar antibiótico</a>
+    <a class="nav-item dia" onclick="show('dia-probioticos',this)">Probióticos y alimentación</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">Dengue</div>
+    <a class="nav-item den" onclick="show('den-clasificacion',this)">Clasificación OMS 2009</a>
+    <a class="nav-item den" onclick="show('den-liquidos',this)">Manejo de líquidos por fase</a>
+    <a class="nav-item den" onclick="show('den-hospitalizacion',this)">Hospitalizar vs ambulatorio</a>
+    <a class="nav-item den" onclick="show('den-ddx',this)">Dx diferencial arbovirosis</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<!-- ═══════════════════════════════════════════════
+     IRA — CLASIFICACIÓN
+═══════════════════════════════════════════════ -->
+<div id="ira-clasificacion" class="section active">
+  <div class="sec-header">
+    <div class="sec-badge ira-badge">IRA</div>
+    <h1>IRA Alta vs IRA Baja</h1>
+    <p>La división anatómica define la etiología, el manejo y la gravedad del cuadro.</p>
+  </div>
+
+  <p>La división se hace por la <strong>glotis como frontera anatómica</strong>. Por encima de la glotis = vía aérea superior = IRA alta. Por debajo = IRA baja. Esta distinción importa porque cambia completamente el agente causal probable, el riesgo de complicaciones y si el paciente puede manejarse en casa o necesita hospitalización.</p>
+
+  <div class="compare">
+    <div class="compare-col left">
+      <h4>🔼 IRA ALTA — por encima de la glotis</h4>
+      <ul>
+        <li><strong>Rinitis aguda</strong> (resfriado común)</li>
+        <li><strong>Faringoamigdalitis</strong></li>
+        <li><strong>Otitis media aguda</strong></li>
+        <li><strong>Sinusitis aguda</strong></li>
+        <li><strong>Laringitis / Crup</strong> (afecta laringe → frontera)</li>
+        <li><strong>Epiglotitis</strong> (urgencia)</li>
+        <li>Adenoiditis</li>
+      </ul>
+    </div>
+    <div class="compare-col right">
+      <h4>🔽 IRA BAJA — por debajo de la glotis</h4>
+      <ul>
+        <li><strong>Bronquiolitis</strong> (lactantes)</li>
+        <li><strong>Neumonía</strong></li>
+        <li><strong>Traqueobronquitis</strong></li>
+        <li><strong>Broncoespasmo / Crisis asmática</strong></li>
+        <li>Absceso pulmonar</li>
+        <li>Derrame pleural</li>
+      </ul>
+    </div>
+  </div>
+
+  <table class="tbl">
+    <tr><th>Característica</th><th>IRA Alta</th><th>IRA Baja</th></tr>
+    <tr><td class="hl">Etiología más frecuente</td><td>Viral (90%): rinovirus, adenovirus, VSR, influenza</td><td>Viral en lactantes (VSR); bacteriana en mayores</td></tr>
+    <tr><td class="hl">Auscultación</td><td>Normal o murmullo vesicular conservado</td><td>Crepitantes, sibilancias, estertores, hipoventilación</td></tr>
+    <tr><td class="hl">FR normal por edad</td><td colspan="2">RN: 40-60 rpm · Lactante: 30-50 · Preescolar: 25-35 · Escolar: 20-25 · Adolescente: 12-20</td></tr>
+    <tr><td class="hl">Riesgo de hipoxia</td><td>Bajo (salvo epiglotitis)</td><td>Alto — siempre medir saturación</td></tr>
+    <tr><td class="hl">Antibiótico de primera línea</td><td>Solo en bacteriana (faringitis estreptocócica, OMA, sinusitis bacteriana)</td><td>Solo en neumonía bacteriana — NO en bronquiolitis</td></tr>
+    <tr><td class="hl">Criterio de hospitalización</td><td>Epiglotitis, crup severo, OMA con complicación</td><td>Neumonía con criterios de gravedad, bronquiolitis moderada-grave</td></tr>
+  </table>
+
+  <div class="alert warning">
+    <span class="alert-icon">⚠️</span>
+    <div><strong>Error frecuente:</strong> Recetar antibiótico para "evitar que baje a los bronquios". Las IRAs altas virales no se previenen con antibióticos. Solo generan resistencia y efectos adversos.</div>
+  </div>
+
+  <h2>Frecuencia respiratoria: el signo vital más importante en IRA baja</h2>
+  <p>La OMS define <strong>taquipnea</strong> como criterio diagnóstico de neumonía en pediatría:</p>
+  <table class="tbl">
+    <tr><th>Edad</th><th>Taquipnea si FR ≥</th></tr>
+    <tr><td>Menor de 2 meses</td><td><strong>60 rpm</strong></td></tr>
+    <tr><td>2–11 meses</td><td><strong>50 rpm</strong></td></tr>
+    <tr><td>1–4 años</td><td><strong>40 rpm</strong></td></tr>
+    <tr><td>≥5 años</td><td><strong>30 rpm</strong></td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     IRA — SIGNOS DE ALARMA
+═══════════════════════════════════════════════ -->
+<div id="ira-signos" class="section">
+  <div class="sec-header">
+    <div class="sec-badge ira-badge">IRA</div>
+    <h1>Signos de Alarma Respiratoria</h1>
+    <p>Identificarlos define si el paciente se va a casa o al hospital.</p>
+  </div>
+
+  <div class="alert danger">
+    <span class="alert-icon">🚨</span>
+    <div><strong>Regla de oro:</strong> Cualquier signo de dificultad respiratoria en un lactante menor de 3 meses es una emergencia hasta demostrar lo contrario.</div>
+  </div>
+
+  <h2>Signos de Dificultad Respiratoria</h2>
+  <table class="tbl">
+    <tr><th>Signo</th><th>Qué es</th><th>Significado</th></tr>
+    <tr><td class="hl">Tiraje intercostal</td><td>Retracción visible entre las costillas al inspirar</td><td>El paciente usa músculos accesorios → trabajo respiratorio aumentado</td></tr>
+    <tr><td class="hl">Tiraje subcostal</td><td>Retracción debajo del último arco costal</td><td>Más grave que el intercostal</td></tr>
+    <tr><td class="hl">Tiraje supraesternal</td><td>Retracción en la escotadura supraesternal</td><td>Obstrucción de vía aérea alta (crup, epiglotitis)</td></tr>
+    <tr><td class="hl">Aleteo nasal</td><td>Movimiento de las alas nasales al respirar</td><td>Intento de aumentar el diámetro de la vía aérea superior</td></tr>
+    <tr><td class="hl">Quejido espiratorio</td><td>Sonido al final de la espiración (grunting)</td><td>El paciente cierra la glotis para mantener la CRF — signo de gravedad</td></tr>
+    <tr><td class="hl">Cabeceo</td><td>Movimiento de la cabeza sincrónico con la respiración en lactantes</td><td>Usa el esternocleidomastoideo como músculo respiratorio — signo de agotamiento</td></tr>
+    <tr><td class="hl">Cianosis central</td><td>Coloración azulada de labios y mucosas</td><td>SpO₂ generalmente &lt;85% — EMERGENCIA</td></tr>
+    <tr><td class="hl">Saturación &lt;92%</td><td>Medida por oximetría de pulso</td><td>Criterio de hospitalización y oxigenoterapia</td></tr>
+  </table>
+
+  <h2>Score de Wood-Downes (Bronquiolitis)</h2>
+  <p>Evalúa 4 parámetros con puntuación 0–2 cada uno. Máximo 10 puntos.</p>
+
+  <table class="tbl">
+    <tr><th>Parámetro</th><th>0 (normal)</th><th>1 (moderado)</th><th>2 (grave)</th></tr>
+    <tr><td class="hl">Sibilancias</td><td>No</td><td>Solo al final de la espiración</td><td>Toda la espiración (con o sin estetoscopio)</td></tr>
+    <tr><td class="hl">Tiraje</td><td>No</td><td>Intercostal leve</td><td>Intercostal + supraesternal + subcostal</td></tr>
+    <tr><td class="hl">Frecuencia respiratoria</td><td>&lt;30 rpm</td><td>31–45 rpm</td><td>&gt;45 rpm</td></tr>
+    <tr><td class="hl">Ventilación (auscultación)</td><td>Buena, simétrica</td><td>Regular, asimétrica</td><td>Muy disminuida o ausente</td></tr>
+    <tr><td class="hl">Cianosis</td><td>No</td><td>Con aire ambiente</td><td>Con FiO₂ 40%</td></tr>
+  </table>
+
+  <div class="score-grid">
+    <div class="score-item">
+      <h4>Score 1–3</h4>
+      <p><strong>Leve.</strong> Manejo ambulatorio. Educación a padres. Control en 24–48 h.</p>
+    </div>
+    <div class="score-item">
+      <h4>Score 4–7</h4>
+      <p><strong>Moderado.</strong> Observación en urgencias. Valorar hospitalización según evolución.</p>
+    </div>
+    <div class="score-item">
+      <h4>Score 8–10</h4>
+      <p><strong>Grave.</strong> Hospitalización inmediata. UCI si no mejora.</p>
+    </div>
+    <div class="score-item">
+      <h4>SpO₂ &lt;92%</h4>
+      <p><strong>Hospitalizar independientemente del score.</strong> Oxígeno suplementario.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     IRA — BRONQUIOLITIS
+═══════════════════════════════════════════════ -->
+<div id="ira-bronquiolitis" class="section">
+  <div class="sec-header">
+    <div class="sec-badge ira-badge">IRA</div>
+    <h1>Bronquiolitis por VSR</h1>
+    <p>Primera causa de hospitalización en menores de 2 años en México.</p>
+  </div>
+
+  <h2>Definición y epidemiología</h2>
+  <p>Síndrome clínico de <strong>primera infección viral de la vía aérea baja</strong> en menores de 2 años, caracterizado por inflamación aguda de los bronquiolos con edema, necrosis epitelial y tapones de moco. El VSR (Virus Sincicial Respiratorio) causa el 70–80% de los casos. Pico: noviembre–febrero en clima templado; en Sinaloa el patrón es menos marcado por el clima cálido.</p>
+
+  <h2>Fisiopatología (en 3 pasos)</h2>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content">VSR infecta el epitelio del bronquiolo → necrosis celular + edema de la pared → <strong>obstrucción parcial</strong></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content">La obstrucción genera <strong>atrapamiento de aire</strong> (mecanismo de válvula) → hiperinsuflación → ventilación-perfusión alterada</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content">Hipoxemia → trabajo respiratorio aumentado → agotamiento, especialmente en lactantes pequeños</div></div>
+  </div>
+
+  <h2>Criterios de hospitalización</h2>
+  <div class="alert danger">
+    <span class="alert-icon">🏥</span>
+    <div>
+      <strong>Hospitalizar si cualquiera de estos está presente:</strong>
+      <ul style="margin-top:6px">
+        <li>SpO₂ ≤92% con aire ambiente</li>
+        <li>Score de Wood-Downes ≥4</li>
+        <li>Frecuencia respiratoria &gt;70 rpm en lactantes</li>
+        <li>Apneas (especialmente en menores de 2 meses)</li>
+        <li>Rechazo total a la vía oral o deshidratación</li>
+        <li>Edad &lt;3 meses</li>
+        <li>Prematurez (&lt;35 semanas) o displasia broncopulmonar</li>
+        <li>Cardiopatía congénita hemodinámicamente significativa</li>
+        <li>Inmunodeficiencia</li>
+        <li>Deterioro clínico progresivo en observación</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Por qué NO se dan antibióticos ni broncodilatadores de rutina</h2>
+
+  <div class="score-grid">
+    <div class="score-item">
+      <h4>❌ Antibióticos — Por qué no</h4>
+      <p>La bronquiolitis es una enfermedad <strong>viral</strong>. Los antibióticos no tienen efecto sobre el VSR ni sobre ningún virus. Solo están indicados si hay evidencia de sobreinfección bacteriana (<1% de los casos), como otitis media concomitante o neumonía bacteriana secundaria documentada.</p>
+    </div>
+    <div class="score-item">
+      <h4>❌ Broncodilatadores — Por qué no</h4>
+      <p>El mecanismo de la bronquiolitis es <strong>inflamación y edema del bronquiolo</strong>, no broncoespasmo por contracción del músculo liso. Los beta-2 agonistas relajan el músculo liso bronquial, pero en bronquiolitis el músculo liso no está contraído — no hay nada que relajar. Múltiples metaanálisis (Cochrane) no demuestran beneficio.</p>
+    </div>
+  </div>
+
+  <div class="alert warning">
+    <span class="alert-icon">⚠️</span>
+    <div><strong>Excepción:</strong> En un niño mayor de 6 meses con antecedentes familiares de asma o con episodio recurrente (≥2 episodios), puede hacerse un ensayo terapéutico con salbutamol y evaluar respuesta en 20 minutos. Si no hay mejoría objetiva, suspender.</div>
+  </div>
+
+  <h2>Manejo basado en evidencia</h2>
+  <table class="tbl">
+    <tr><th>Intervención</th><th>Evidencia</th><th>Recomendación</th></tr>
+    <tr><td>Oxígeno</td><td>Fuerte</td><td>✅ Sí — si SpO₂ &lt;92%. Meta: SpO₂ 92–95%</td></tr>
+    <tr><td>Hidratación</td><td>Fuerte</td><td>✅ Sí — oral si tolera; SNG o IV si no tolera</td></tr>
+    <tr><td>Salbutamol nebulizado</td><td>No beneficio</td><td>❌ No de rutina</td></tr>
+    <tr><td>Adrenalina nebulizada</td><td>Beneficio a corto plazo</td><td>⚠️ Solo en urgencias para reducir ingreso, no mantenimiento</td></tr>
+    <tr><td>Corticoides sistémicos</td><td>No beneficio</td><td>❌ No indicados</td></tr>
+    <tr><td>Antibióticos</td><td>No beneficio</td><td>❌ No de rutina</td></tr>
+    <tr><td>Suero salino hipertónico 3%</td><td>Beneficio moderado en hospitalizados</td><td>⚠️ Puede reducir días de hospitalización</td></tr>
+  </table>
+
+  <h2>Palivizumab — Profilaxis en prematuros</h2>
+  <p>El palivizumab es un <strong>anticuerpo monoclonal</strong> (no una vacuna) que neutraliza directamente el VSR. No trata la bronquiolitis — la <em>previene</em>.</p>
+
+  <table class="tbl">
+    <tr><th>¿A quién se da?</th><th>Criterio específico</th></tr>
+    <tr><td>Prematuros &lt;29 semanas</td><td>Durante los primeros 12 meses de vida</td></tr>
+    <tr><td>Prematuros 29–32 semanas</td><td>Solo durante el primer año si hay factores de riesgo</td></tr>
+    <tr><td>Displasia broncopulmonar</td><td>Hasta los 2 años si requirió tratamiento en los últimos 6 meses</td></tr>
+    <tr><td>Cardiopatía congénita hemodinámicamente significativa</td><td>Hasta los 2 años</td></tr>
+    <tr><td>Inmunodeficiencia grave</td><td>Hasta los 2 años</td></tr>
+  </table>
+
+  <p><strong>Dosis:</strong> <span class="dosis">15 mg/kg IM</span> mensual durante la temporada de VSR (5 dosis máximo por temporada). No es parte del esquema de vacunación universal en México, tiene costo elevado y se gestiona por casos individuales en IMSS/ISSSTE.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     IRA — NEUMONÍA
+═══════════════════════════════════════════════ -->
+<div id="ira-neumonia" class="section">
+  <div class="sec-header">
+    <div class="sec-badge ira-badge">IRA</div>
+    <h1>Neumonía Adquirida en la Comunidad (NAC)</h1>
+    <p>Criterios clínicos, cuándo pedir Rx, criterios de hospitalización y elección del antibiótico según edad.</p>
+  </div>
+
+  <h2>Criterios clínicos de diagnóstico (OMS)</h2>
+  <p>El diagnóstico de NAC en pediatría es <strong>clínico</strong>. La radiografía confirma pero no es necesaria para iniciar tratamiento en la mayoría de los casos.</p>
+
+  <div class="alert info">
+    <span class="alert-icon">📋</span>
+    <div>
+      <strong>Criterios diagnósticos OMS (se requieren los primeros 2 + al menos 1 de los otros):</strong>
+      <ul style="margin-top:6px">
+        <li><strong>Fiebre</strong> ≥38.5°C</li>
+        <li><strong>Taquipnea</strong> para la edad (ver tabla en sección de IRA Alta/Baja)</li>
+        <li>Tiraje, quejido o aleteo nasal</li>
+        <li>Saturación de O₂ &lt;95%</li>
+        <li>Auscultación: crepitantes, hipoventilación focal</li>
+        <li>Aspecto tóxico o letargia</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>¿Cuándo pedir radiografía de tórax?</h2>
+  <table class="tbl">
+    <tr><th>Situación</th><th>¿Rx indicada?</th><th>Razón</th></tr>
+    <tr><td>NAC típica, sin criterios de gravedad, que va a manejarse en casa</td><td>❌ No necesaria</td><td>No cambia el manejo ambulatorio inicial</td></tr>
+    <tr><td>Criterios de hospitalización</td><td>✅ Sí</td><td>Define extensión y posibles complicaciones (derrame, absceso)</td></tr>
+    <tr><td>Fiebre que no cede en 48–72 h con tratamiento</td><td>✅ Sí</td><td>Sospecha de complicación o diagnóstico incorrecto</td></tr>
+    <tr><td>Sospecha de derrame pleural (matidez a la percusión)</td><td>✅ Urgente</td><td>Determinar si requiere drenaje</td></tr>
+    <tr><td>Recaída o neumonía recurrente en el mismo lóbulo</td><td>✅ Sí</td><td>Descartar anomalía anatómica o cuerpo extraño</td></tr>
+    <tr><td>Lactante menor de 3 meses con fiebre</td><td>✅ Sí</td><td>Cualquier foco infeccioso en este grupo requiere estudio completo</td></tr>
+  </table>
+
+  <h2>Score de gravedad — PIDS/IDSA (adaptado a niños)</h2>
+  <p>No existe un score tan estandarizado como el CURB-65 de adultos en pediatría. Las guías PIDS/IDSA 2011 (Pediatric Infectious Diseases Society) usan criterios clínicos directos:</p>
+
+  <table class="tbl">
+    <tr><th>Criterio de gravedad</th><th>Valor</th></tr>
+    <tr><td>Frecuencia respiratoria</td><td>&gt;70 rpm en lactantes / &gt;50 rpm en escolares</td></tr>
+    <tr><td>Saturación de O₂</td><td>&lt;90% con FiO₂ 21% (aire ambiente)</td></tr>
+    <tr><td>Signos de dificultad respiratoria severa</td><td>Tiraje severo, quejido, aleteo intenso</td></tr>
+    <tr><td>Estado de conciencia</td><td>Letargia, irritabilidad marcada, apnea</td></tr>
+    <tr><td>Tolerancia oral</td><td>Incapacidad de tomar líquidos</td></tr>
+    <tr><td>Extensión radiológica</td><td>Afección multifocal, derrame, neumatocele</td></tr>
+  </table>
+
+  <div class="alert danger">
+    <span class="alert-icon">🏥</span>
+    <div><strong>Hospitalizar si:</strong> SpO₂ &lt;92% · FR muy elevada para edad · Signos de dificultad respiratoria grave · Apneas · Menor de 3–6 meses · No tolera vía oral · Aspecto tóxico · Derrame pleural · Falta de respuesta a tratamiento ambulatorio en 48–72 h</div>
+  </div>
+
+  <h2>Elección del antibiótico según edad</h2>
+  <table class="tbl">
+    <tr><th>Edad</th><th>Agente más probable</th><th>ATB de elección</th><th>Dosis</th></tr>
+    <tr><td class="hl">Menor de 3 meses</td><td>S. agalactiae, E. coli, L. monocytogenes, C. trachomatis</td><td><strong>HOSPITALIZAR.</strong> Ampicilina + Gentamicina IV (clamidial: azitromicina)</td><td>Ampicilina 50 mg/kg/dosis c/6h IV</td></tr>
+    <tr><td class="hl">3 meses – 5 años</td><td>Viral (VSR, influenza, adenovirus) o S. pneumoniae</td><td>Amoxicilina (si bacteriana confirmada o muy probable)</td><td><span class="dosis">90 mg/kg/día</span> VO en 2 dosis × 7–10 días</td></tr>
+    <tr><td class="hl">5–15 años</td><td>S. pneumoniae, M. pneumoniae, C. pneumoniae</td><td>Amoxicilina o azitromicina si se sospecha atípico</td><td>Amoxicilina <span class="dosis">80–90 mg/kg/día</span> o Azitromicina <span class="dosis">10 mg/kg/día</span> × 5 días</td></tr>
+    <tr><td class="hl">Hospitalizado sin gravedad</td><td>S. pneumoniae</td><td>Ampicilina IV</td><td><span class="dosis">150–200 mg/kg/día</span> IV en 4 dosis</td></tr>
+    <tr><td class="hl">Hospitalizado grave / UCI</td><td>S. pneumoniae, S. aureus</td><td>Ceftriaxona + vancomicina (si sospecha SARM)</td><td>Ceftriaxona <span class="dosis">50–100 mg/kg/día</span> IV</td></tr>
+  </table>
+
+  <div class="alert warning">
+    <span class="alert-icon">⚠️</span>
+    <div><strong>Importante:</strong> En niños de 3 meses a 5 años con NAC leve, la mayoría de los casos son virales. Si no hay criterios de gravedad ni datos clínicos de neumonía bacteriana (fiebre alta &gt;39°C de inicio brusco, aspecto tóxico), puede observarse 24–48 h antes de iniciar antibiótico.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     IRA — FARINGOAMIGDALITIS
+═══════════════════════════════════════════════ -->
+<div id="ira-faringoamigdalitis" class="section">
+  <div class="sec-header">
+    <div class="sec-badge ira-badge">IRA</div>
+    <h1>Faringoamigdalitis y Score de Centor</h1>
+    <p>El 80% es viral. El antibiótico solo está indicado en estreptocócica confirmada o con alta probabilidad.</p>
+  </div>
+
+  <h2>Score de Centor Modificado (McIsaac)</h2>
+  <p>Predice la probabilidad de infección por <em>Streptococcus pyogenes</em> (SBHGA). Se suma 1 punto por cada criterio presente, con ajuste por edad.</p>
+
+  <table class="tbl">
+    <tr><th>Criterio</th><th>Puntos</th></tr>
+    <tr><td>Exudado amigdalino</td><td>+1</td></tr>
+    <tr><td>Adenopatía cervical anterior dolorosa</td><td>+1</td></tr>
+    <tr><td>Fiebre &gt;38°C (en las últimas 24 h)</td><td>+1</td></tr>
+    <tr><td>Ausencia de tos</td><td>+1</td></tr>
+    <tr><td>Edad 3–14 años</td><td>+1</td></tr>
+    <tr><td>Edad 15–44 años</td><td>0</td></tr>
+    <tr><td>Edad ≥45 años</td><td>–1</td></tr>
+  </table>
+
+  <table class="tbl">
+    <tr><th>Puntaje total</th><th>Probabilidad SBHGA</th><th>Conducta</th></tr>
+    <tr><td>≤1</td><td>5–10%</td><td>No cultivo, no antibiótico</td></tr>
+    <tr><td>2</td><td>11–17%</td><td>Cultivo faríngeo, antibiótico solo si positivo</td></tr>
+    <tr><td>3</td><td>28–35%</td><td>Cultivo o test rápido; antibiótico si positivo</td></tr>
+    <tr><td>≥4</td><td>51–53%</td><td>Tratamiento empírico O confirmar con test rápido</td></tr>
+  </table>
+
+  <h2>Antibióticos en FA estreptocócica (10 días)</h2>
+  <table class="tbl">
+    <tr><th>Situación</th><th>Antibiótico</th><th>Dosis</th></tr>
+    <tr><td>Sin alergia a PNC — primera elección</td><td><strong>Penicilina V oral</strong></td><td>&lt;12 años: <span class="dosis">250 mg c/12h</span> · &gt;12 años: <span class="dosis">500 mg c/12h</span></td></tr>
+    <tr><td>Sin alergia a PNC — dosis única</td><td><strong>Penicilina Benzatínica IM</strong></td><td>&lt;27 kg: <span class="dosis">600,000 UI</span> · &gt;27 kg: <span class="dosis">1,200,000 UI</span></td></tr>
+    <tr><td>Sin alergia — alternativa oral</td><td><strong>Amoxicilina</strong></td><td>&lt;4 años: <span class="dosis">50 mg/kg/día</span> c/12h · &gt;4 años: <span class="dosis">750 mg/día</span></td></tr>
+    <tr><td>Alergia inmediata a PNC</td><td>Clindamicina o Azitromicina</td><td>Clindamicina: <span class="dosis">20 mg/kg/día</span> en 2 dosis · Azitromicina: <span class="dosis">10 mg/kg/día</span> × 5 días</td></tr>
+    <tr><td>Alergia retardada a PNC</td><td>Cefadroxilo</td><td><span class="dosis">30 mg/kg/día</span> en 2 dosis</td></tr>
+    <tr><td>Recurrencia o falla terapéutica</td><td>Amoxicilina-Clavulánico</td><td><span class="dosis">40 mg/kg/día</span> en 2 dosis × 10 días</td></tr>
+  </table>
+
+  <div class="alert success">
+    <span class="alert-icon">✅</span>
+    <div><strong>¿Por qué es tan importante tratar la FA estreptocócica?</strong> No es para acortar el cuadro (que se resuelve solo en 3–7 días), sino para <strong>prevenir fiebre reumática aguda</strong>. El antibiótico debe iniciarse dentro de los 9 días del inicio de síntomas para tener efecto protector.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     IRA — OTITIS
+═══════════════════════════════════════════════ -->
+<div id="ira-otitis" class="section">
+  <div class="sec-header">
+    <div class="sec-badge ira-badge">IRA</div>
+    <h1>Otitis Media Aguda (OMA)</h1>
+    <p>Diagnóstico otoscópico. No toda OMA requiere antibiótico.</p>
+  </div>
+
+  <h2>Criterios diagnósticos AAP 2013</h2>
+  <p>El diagnóstico requiere <strong>todos</strong> los siguientes elementos:</p>
+  <ol>
+    <li>Inicio agudo de síntomas (&lt;48 horas)</li>
+    <li>Evidencia de efusión en oído medio (abombamiento de la membrana timpánica)</li>
+    <li>Signos y síntomas de inflamación del oído medio (otalgia, eritema intenso o abombamiento)</li>
+  </ol>
+  <div class="alert warning">
+    <span class="alert-icon">⚠️</span>
+    <div><strong>No diagnosticar OMA</strong> sin evidencia de efusión en oído medio. Una membrana timpánica eritematosa sin abombamiento, en un niño llorando, no es OMA.</div>
+  </div>
+
+  <h2>¿Cuándo dar antibiótico en OMA?</h2>
+  <table class="tbl">
+    <tr><th>Situación</th><th>Conducta</th></tr>
+    <tr><td>Menor de 6 meses</td><td>✅ Siempre antibiótico</td></tr>
+    <tr><td>OMA bilateral en menor de 2 años</td><td>✅ Siempre antibiótico</td></tr>
+    <tr><td>OMA con otorrea</td><td>✅ Siempre antibiótico</td></tr>
+    <tr><td>OMA severa (otalgia severa &gt;48h o fiebre ≥39°C)</td><td>✅ Siempre antibiótico</td></tr>
+    <tr><td>OMA unilateral no severa en 6–23 meses</td><td>⚠️ Observación 48–72h O antibiótico</td></tr>
+    <tr><td>OMA no severa en ≥2 años</td><td>⚠️ Observación 48–72h (la mayoría resuelve sola)</td></tr>
+  </table>
+
+  <h2>Antibióticos de elección</h2>
+  <table class="tbl">
+    <tr><th>Situación</th><th>ATB</th><th>Dosis</th><th>Duración</th></tr>
+    <tr><td>Primera línea</td><td><strong>Amoxicilina</strong></td><td><span class="dosis">80–90 mg/kg/día</span> VO en 2 dosis</td><td>&lt;2 años: 10 días · 2–5 años: 7 días · ≥6 años: 5–7 días</td></tr>
+    <tr><td>ATB en últimos 30 días o conjuntivitis concomitante</td><td>Amoxicilina-Clavulánico</td><td><span class="dosis">90 mg/kg/día</span> (componente amoxicilina)</td><td>Según edad</td></tr>
+    <tr><td>Falla terapéutica 48–72h</td><td>Amoxicilina-Clavulánico o Ceftriaxona</td><td>Ceftriaxona: <span class="dosis">50 mg/kg/día</span> IM × 3 días</td><td>3 días (ceftriaxona)</td></tr>
+    <tr><td>Alergia no grave a PNC</td><td>Cefuroximo</td><td><span class="dosis">30 mg/kg/día</span> en 2 dosis</td><td>Según edad</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     IRA — USO RACIONAL ATB
+═══════════════════════════════════════════════ -->
+<div id="ira-atb" class="section">
+  <div class="sec-header">
+    <div class="sec-badge ira-badge">IRA</div>
+    <h1>Uso Racional de Antibióticos en IRA</h1>
+    <p>El 80–90% de las IRAs son virales. Saber justificar por qué NO dar antibiótico es tan importante como saber cuándo darlo.</p>
+  </div>
+
+  <div class="alert danger">
+    <span class="alert-icon">⛔</span>
+    <div><strong>No existe ninguna IRA viral que se prevenga con antibiótico.</strong> El antibiótico no evita que "baje a los bronquios", no acorta la duración del resfriado, no baja la fiebre viral y no previene otitis en el contexto de un resfriado común.</div>
+  </div>
+
+  <h2>Resumen: ¿En qué IRAs está indicado el antibiótico?</h2>
+  <table class="tbl">
+    <tr><th>Diagnóstico</th><th>ATB indicado</th><th>Cuándo / Cuál</th></tr>
+    <tr><td>Resfriado común</td><td>❌ No</td><td>100% viral</td></tr>
+    <tr><td>Faringoamigdalitis viral</td><td>❌ No</td><td>Tratamiento sintomático</td></tr>
+    <tr><td>Faringoamigdalitis estreptocócica (SBHGA)</td><td>✅ Sí</td><td>Penicilina V o amoxicilina × 10 días</td></tr>
+    <tr><td>Laringitis/Crup</td><td>❌ No</td><td>Corticoides + adrenalina si grave</td></tr>
+    <tr><td>Bronquiolitis</td><td>❌ No</td><td>Manejo de soporte</td></tr>
+    <tr><td>OMA — criterios de observación</td><td>⚠️ Diferir 48–72h</td><td>Analgesia; ATB si no mejora</td></tr>
+    <tr><td>OMA — criterios de tratamiento</td><td>✅ Sí</td><td>Amoxicilina 80–90 mg/kg/día</td></tr>
+    <tr><td>Sinusitis bacteriana (&gt;10 días o empeora)</td><td>✅ Sí</td><td>Amoxicilina o Amox-Clavulánico</td></tr>
+    <tr><td>Neumonía bacteriana</td><td>✅ Sí</td><td>Según edad (ver sección de NAC)</td></tr>
+    <tr><td>Epiglotitis</td><td>✅ Sí + urgencia</td><td>Ceftriaxona IV — asegurar vía aérea primero</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DIARREA — CLASIFICACIÓN
+═══════════════════════════════════════════════ -->
+<div id="dia-clasificacion" class="section">
+  <div class="sec-header">
+    <div class="sec-badge dia-badge">Diarrea</div>
+    <h1>Clasificación de las Diarreas</h1>
+    <p>Tres ejes de clasificación: duración, mecanismo y características de las heces.</p>
+  </div>
+
+  <h2>Por duración</h2>
+  <table class="tbl">
+    <tr><th>Tipo</th><th>Duración</th><th>Implicación</th></tr>
+    <tr><td class="hl">Aguda</td><td>&lt;14 días</td><td>La mayoría. Manejo con rehidratación y vigilancia.</td></tr>
+    <tr><td class="hl">Persistente</td><td>14–30 días</td><td>Pensar en giardia, malabsorción post-infecciosa, intolerancia a la lactosa secundaria</td></tr>
+    <tr><td class="hl">Crónica</td><td>&gt;30 días</td><td>Buscar causa orgánica: EII, alergia a proteína de leche de vaca, celiaquía, fibrosis quística</td></tr>
+  </table>
+
+  <h2>Por mecanismo y características de las heces</h2>
+  <table class="tbl">
+    <tr><th>Tipo</th><th>Heces</th><th>Mecanismo</th><th>Agente frecuente</th></tr>
+    <tr><td class="hl">Secretora</td><td>Acuosas, abundantes, sin moco ni sangre</td><td>Enterotoxina → hipersecreción de Cl⁻ y agua hacia la luz intestinal</td><td>Rotavirus, E. coli enterotoxigénica (ETEC), Vibrio cholerae</td></tr>
+    <tr><td class="hl">Invasiva / Disentería</td><td>Mucosanguinolentas, con tenesmo</td><td>Invasión de la mucosa del colon → inflamación → sangrado</td><td>Shigella, E. coli enteroinvasiva (EIEC), Campylobacter, Entamoeba histolytica</td></tr>
+    <tr><td class="hl">Osmótica</td><td>Ácidas, explosivas, eritema perianal, mejoran con el ayuno</td><td>Solutos no absorbidos retienen agua en la luz</td><td>Intolerancia a lactosa (post-viral), malabsorción</td></tr>
+    <tr><td class="hl">Motora</td><td>Voluminosas, grasosas (esteatorrea)</td><td>Tránsito acelerado o malabsorción de grasas</td><td>Giardia lamblia, celiaquía, fibrosis quística</td></tr>
+  </table>
+
+  <div class="alert info">
+    <span class="alert-icon">💡</span>
+    <div><strong>Clave clínica:</strong> La presencia de sangre en heces define disentería y cambia el manejo — aquí sí se necesita estudio microbiológico y posiblemente antibiótico. La diarrea acuosa sin sangre en un niño previamente sano se maneja con rehidratación.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DIARREA — GORELICK / PLAN A-B-C
+═══════════════════════════════════════════════ -->
+<div id="dia-gorelick" class="section">
+  <div class="sec-header">
+    <div class="sec-badge dia-badge">Diarrea</div>
+    <h1>Escala de Gorelick y Plan A/B/C OMS</h1>
+    <p>La evaluación del grado de deshidratación es la habilidad clínica más importante en el manejo de diarrea pediátrica.</p>
+  </div>
+
+  <h2>Escala de Gorelick (10 signos)</h2>
+  <p>Cada signo vale 1 punto. Diseñada para lactantes y niños hasta 5 años.</p>
+
+  <table class="tbl">
+    <tr><th>#</th><th>Signo clínico</th><th>Cómo se evalúa</th></tr>
+    <tr><td>1</td><td class="hl">Aspecto general anormal</td><td>Letárgico, inconsolable, muy irritable</td></tr>
+    <tr><td>2</td><td class="hl">Ojos hundidos</td><td>Observar al paciente en reposo</td></tr>
+    <tr><td>3</td><td class="hl">Mucosas secas</td><td>Labios y mucosa oral sin saliva visible</td></tr>
+    <tr><td>4</td><td class="hl">Lágrimas ausentes</td><td>Al llorar no produce lágrimas</td></tr>
+    <tr><td>5</td><td class="hl">Taquicardia</td><td>FC elevada para edad</td></tr>
+    <tr><td>6</td><td class="hl">Respiración anormal</td><td>Taquipnea o respiración profunda (acidosis)</td></tr>
+    <tr><td>7</td><td class="hl">Turgencia de piel disminuida</td><td>Pliegue cutáneo abdominal tarda &gt;2 seg en desaparecer</td></tr>
+    <tr><td>8</td><td class="hl">Fontanela hundida</td><td>En lactantes menores de 18 meses</td></tr>
+    <tr><td>9</td><td class="hl">Pulso radial débil</td><td>Amplitud disminuida</td></tr>
+    <tr><td>10</td><td class="hl">Llenado capilar prolongado</td><td>&gt;2 segundos en uña o palma</td></tr>
+  </table>
+
+  <div class="score-grid">
+    <div class="score-item">
+      <h4>0–2 puntos</h4>
+      <p>Sin deshidratación o deshidratación &lt;5%. <strong>Plan A.</strong></p>
+    </div>
+    <div class="score-item">
+      <h4>3–5 puntos</h4>
+      <p>Deshidratación leve-moderada 5–9%. <strong>Plan B.</strong></p>
+    </div>
+    <div class="score-item">
+      <h4>6–10 puntos</h4>
+      <p>Deshidratación grave ≥10%. <strong>Plan C.</strong></p>
+    </div>
+    <div class="score-item">
+      <h4>Choque hipovolémico</h4>
+      <p>Pulso filiforme, hipotensión, llenado &gt;3 seg. <strong>Plan C urgente.</strong></p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>Plan A — Sin deshidratación (en casa)</h2>
+  <div class="steps">
+    <div class="step"><div class="step-num green">1</div><div class="step-content"><strong>Continuar alimentación normal</strong> — NO ayunar. Continuar lactancia materna. Dieta blanda si ya come sólidos.</div></div>
+    <div class="step"><div class="step-num green">2</div><div class="step-content"><strong>Dar SRO después de cada evacuación líquida:</strong> Menores de 2 años: <span class="dosis">50–100 mL</span> · Mayores de 2 años: <span class="dosis">100–200 mL</span> · Adultos: tanto como quieran</div></div>
+    <div class="step"><div class="step-num green">3</div><div class="step-content"><strong>Educar a los padres sobre signos de alarma:</strong> no orina en 6 horas, boca muy seca, no llora con lágrimas, ojos hundidos, letargia → consultar inmediatamente.</div></div>
+  </div>
+
+  <h2>Plan B — Deshidratación leve-moderada (en unidad de salud)</h2>
+  <div class="steps">
+    <div class="step"><div class="step-num green">1</div><div class="step-content"><strong>Rehidratación oral supervisada en 4 horas:</strong> <span class="dosis">75 mL/kg</span> de SRO en 4 horas. Administrar en sorbos frecuentes o con jeringa (5–10 mL cada 5 minutos en lactantes).</div></div>
+    <div class="step"><div class="step-num green">2</div><div class="step-content"><strong>Reevaluar al término de las 4 horas.</strong> Si mejoró → Plan A en casa. Si no mejoró o empeoró → Plan C.</div></div>
+    <div class="step"><div class="step-num green">3</div><div class="step-content"><strong>Reponer pérdidas continuas durante la rehidratación:</strong> <span class="dosis">10 mL/kg</span> de SRO por cada evacuación diarreica adicional.</div></div>
+  </div>
+
+  <h2>Plan C — Deshidratación grave (hospitalización)</h2>
+  <div class="alert danger">
+    <span class="alert-icon">🏥</span>
+    <div>
+      <strong>Rehidratación IV urgente:</strong><br>
+      Solución Hartmann (Ringer Lactato) o Solución Salina 0.9%<br><br>
+      <strong>Fase de expansión (primeros 30 min):</strong> <span class="dosis">20 mL/kg</span> IV rápido. Repetir hasta lograr perfusión adecuada.<br><br>
+      <strong>Fase de rehidratación (siguientes 3–4 h):</strong> <span class="dosis">70–100 mL/kg</span> IV en 3–4 horas según edad y grado.<br><br>
+      Reevaluar cada 30 minutos hasta estabilización hemodinámica.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DIARREA — SRO
+═══════════════════════════════════════════════ -->
+<div id="dia-sro" class="section">
+  <div class="sec-header">
+    <div class="sec-badge dia-badge">Diarrea</div>
+    <h1>Sales de Rehidratación Oral (SRO)</h1>
+    <p>Por qué son el pilar del tratamiento, cómo se preparan y cómo se administran.</p>
+  </div>
+
+  <h2>Por qué las SRO son el pilar del tratamiento</h2>
+  <p>Las SRO aprovechan el <strong>cotransportador sodio-glucosa (SGLT-1)</strong> del enterocito, que permanece funcional durante la diarrea viral incluso cuando hay daño de vellosidades. Cuando el sodio y la glucosa se absorben juntos a través de este transportador, el agua los sigue por osmosis. La glucosa "lleva de la mano" al sodio, y el sodio "lleva de la mano" al agua.</p>
+
+  <div class="alert success">
+    <span class="alert-icon">🔬</span>
+    <div><strong>La SRO fue descrita por The Lancet como "el avance médico más importante del siglo XX".</strong> Redujo la mortalidad por diarrea de 5 millones a menos de 1 millón de niños por año a nivel mundial.</div>
+  </div>
+
+  <h2>Fórmula OMS de SRO (osmolaridad reducida — la estándar actual)</h2>
+  <table class="tbl">
+    <tr><th>Componente</th><th>Cantidad por litro</th><th>Función</th></tr>
+    <tr><td>Cloruro de sodio (NaCl)</td><td>2.6 g</td><td>Reponer sodio perdido en heces</td></tr>
+    <tr><td>Glucosa anhidra</td><td>13.5 g</td><td>Activa SGLT-1, facilita absorción de Na⁺ y agua</td></tr>
+    <tr><td>Cloruro de potasio (KCl)</td><td>1.5 g</td><td>Reponer potasio (pérdidas fecales)</td></tr>
+    <tr><td>Citrato trisódico dihidratado</td><td>2.9 g</td><td>Corregir acidosis metabólica</td></tr>
+    <tr><td>Agua</td><td>1 litro</td><td>—</td></tr>
+    <tr><td colspan="2"><strong>Osmolaridad total</strong></td><td><strong>245 mOsm/L</strong> (reducida vs. fórmula anterior de 311)</td></tr>
+  </table>
+
+  <h2>Cómo preparar los sobres comerciales (Pedialyte, Suero oral, etc.)</h2>
+  <div class="steps">
+    <div class="step"><div class="step-num green">1</div><div class="step-content">Lavar las manos con agua y jabón antes de preparar.</div></div>
+    <div class="step"><div class="step-num green">2</div><div class="step-content">Disolver el contenido del sobre en <strong>exactamente 1 litro de agua hervida fría o agua potable.</strong></div></div>
+    <div class="step"><div class="step-num green">3</div><div class="step-content">No agregar azúcar, sal, jugo ni ningún otro ingrediente — altera la osmolaridad y puede empeorar la diarrea.</div></div>
+    <div class="step"><div class="step-num green">4</div><div class="step-content">Usar en las siguientes <strong>24 horas</strong>. Después de ese tiempo, desechar y preparar nueva solución.</div></div>
+  </div>
+
+  <div class="alert danger">
+    <span class="alert-icon">⛔</span>
+    <div><strong>NO dar como rehidratación:</strong> agua sola (no repone electrolitos), bebidas deportivas (Gatorade — osmolaridad incorrecta, mucho azúcar), refrescos, jugos, caldos de pollo, té. Todas estas opciones caseras pueden agravar la deshidratación.</div>
+  </div>
+
+  <h2>Cuándo SÍ y cuándo NO está indicada la vía oral</h2>
+  <table class="tbl">
+    <tr><th>Situación</th><th>¿Vía oral?</th><th>Razón</th></tr>
+    <tr><td>Deshidratación leve-moderada, despierto, tolera líquidos</td><td>✅ Sí</td><td>Tan efectiva como IV en estudios controlados; menos invasiva</td></tr>
+    <tr><td>Vómitos frecuentes</td><td>✅ Sí (sorbos pequeños)</td><td>Pequeñas cantidades cada 5 min son toleradas en la mayoría de los casos</td></tr>
+    <tr><td>Deshidratación grave con choque</td><td>❌ No — IV urgente</td><td>Absorción intestinal comprometida; riesgo de aspiración</td></tr>
+    <tr><td>Alteración del estado de conciencia / letargia</td><td>❌ No</td><td>Riesgo de broncoaspiración</td></tr>
+    <tr><td>Íleo paralítico o distensión abdominal severa</td><td>❌ No</td><td>Motilidad intestinal ausente</td></tr>
+    <tr><td>Intolerancia completa a la vía oral a pesar de intentos</td><td>❌ No — SNG o IV</td><td>Puede usarse sonda nasogástrica antes de pasar a IV</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DIARREA — CRITERIOS DE HOSPITALIZACIÓN / IV
+═══════════════════════════════════════════════ -->
+<div id="dia-iv" class="section">
+  <div class="sec-header">
+    <div class="sec-badge dia-badge">Diarrea</div>
+    <h1>Criterios de Hospitalización y Rehidratación IV</h1>
+  </div>
+
+  <div class="alert danger">
+    <span class="alert-icon">🏥</span>
+    <div>
+      <strong>Hospitalizar si hay cualquiera de estos:</strong>
+      <ul style="margin-top:6px">
+        <li>Deshidratación grave (Gorelick ≥6 o choque hipovolémico)</li>
+        <li>Falla de la rehidratación oral (no mejora en 4 horas de Plan B)</li>
+        <li>Vómitos incoercibles que impiden la rehidratación oral</li>
+        <li>Disentería con aspecto tóxico o fiebre alta</li>
+        <li>Menor de 3 meses con diarrea</li>
+        <li>Sospecha de causa quirúrgica (invaginación, apendicitis)</li>
+        <li>Inmunodeprimido o desnutrido severo</li>
+        <li>Cuidadores que no pueden garantizar el seguimiento</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Esquema de rehidratación IV (Plan C)</h2>
+  <table class="tbl">
+    <tr><th>Fase</th><th>Solución</th><th>Volumen</th><th>Tiempo</th></tr>
+    <tr><td class="hl">Expansión (choque)</td><td>Solución Salina 0.9% o Ringer Lactato</td><td><span class="dosis">20 mL/kg</span> rápido</td><td>15–30 minutos. Repetir si persiste hipoperfusión</td></tr>
+    <tr><td class="hl">Rehidratación (deshidratación grave sin choque)</td><td>Ringer Lactato o SS 0.9%</td><td><span class="dosis">100 mL/kg</span></td><td>&lt;1 año: 3 horas · &gt;1 año: 3 horas</td></tr>
+    <tr><td class="hl">Mantenimiento</td><td>Solución 0.45% NaCl + Glucosa 5%</td><td>Fórmula de Holliday-Segar</td><td>Continuo hasta tolerancia oral</td></tr>
+  </table>
+
+  <h2>Fórmula de Holliday-Segar (líquidos de mantenimiento)</h2>
+  <table class="tbl">
+    <tr><th>Peso</th><th>mL/kg/hora</th></tr>
+    <tr><td>Primeros 10 kg</td><td>4 mL/kg/hora (= 100 mL/kg/día)</td></tr>
+    <tr><td>Siguientes 10–20 kg</td><td>2 mL/kg/hora adicionales (= 50 mL/kg/día)</td></tr>
+    <tr><td>Cada kg por encima de 20 kg</td><td>1 mL/kg/hora adicional (= 20 mL/kg/día)</td></tr>
+  </table>
+  <p><strong>Ejemplo práctico:</strong> Niño de 15 kg → (10×4) + (5×2) = 40+10 = <span class="dosis">50 mL/hora</span></p>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DIARREA — ETIOLOGÍA POR EDAD
+═══════════════════════════════════════════════ -->
+<div id="dia-etiologia" class="section">
+  <div class="sec-header">
+    <div class="sec-badge dia-badge">Diarrea</div>
+    <h1>Etiología por Grupo de Edad</h1>
+  </div>
+
+  <table class="tbl">
+    <tr><th>Edad</th><th>Agente más frecuente</th><th>Características clínicas</th><th>Consideración especial</th></tr>
+    <tr><td class="hl">Neonato (&lt;1 mes)</td><td>E. coli enteropatógena, Salmonella, Rotavirus</td><td>Diarrea acuosa, riesgo de sepsis, febrícula o hipotermia</td><td>Siempre hospitalizar. Hemocultivo y urocultivo.</td></tr>
+    <tr><td class="hl">Lactante 1–12 meses</td><td><strong>Rotavirus</strong> (principal), VSR entérico, adenovirus entérico</td><td>Diarrea acuosa explosiva + vómitos + fiebre alta (38–39°C). Inicio súbito.</td><td>Vacuna antirotavirus en esquema. Mayor riesgo de deshidratación por peso bajo.</td></tr>
+    <tr><td class="hl">Preescolar 1–5 años</td><td>Rotavirus, Norovirus, ETEC, Giardia</td><td>Rotavirus: acuosa + vómitos. Giardia: distensión, heces grasosas, crónica.</td><td>Giardia: tinidazol o metronidazol. ETEC: frecuente en zonas rurales de Sinaloa.</td></tr>
+    <tr><td class="hl">Escolar 5–12 años</td><td>Norovirus, Campylobacter, Salmonella, Shigella</td><td>Campylobacter y Shigella: disentería (moco y sangre), fiebre, dolor cólico intenso</td><td>Brotes en escuelas. Alimentos contaminados (Salmonella en huevo, pollo).</td></tr>
+    <tr><td class="hl">Adolescente</td><td>Norovirus, Shigella, intoxicación alimentaria (S. aureus, B. cereus)</td><td>Intox. alimentaria: inicio en &lt;6h, vómitos predominantes, autolimitada</td><td>Pregunta siempre por viajes recientes y alimentos consumidos.</td></tr>
+  </table>
+
+  <div class="alert info">
+    <span class="alert-icon">🦠</span>
+    <div><strong>Giardia lamblia en Sinaloa:</strong> Prevalencia elevada en zonas rurales agrícolas del estado por consumo de agua no tratada. Sospechar en diarrea que dura más de 14 días, con distensión abdominal, eructos sulfurosos y heces grasosas. Diagnóstico: antígeno fecal o coproparasitoscópico. Tratamiento: <span class="dosis">tinidazol 50 mg/kg dosis única</span> o metronidazol 15 mg/kg/día × 7 días.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DIARREA — CUÁNDO DAR ATB
+═══════════════════════════════════════════════ -->
+<div id="dia-atb" class="section">
+  <div class="sec-header">
+    <div class="sec-badge dia-badge">Diarrea</div>
+    <h1>¿Cuándo Dar Antibiótico en Diarrea?</h1>
+    <p>La mayoría de las diarreas pediátricas son virales o autolimitadas. El antibiótico tiene indicaciones precisas.</p>
+  </div>
+
+  <div class="alert warning">
+    <span class="alert-icon">⚠️</span>
+    <div><strong>El antibiótico empírico en diarrea acuosa sin sangre NO está indicado.</strong> En diarrea por ETEC prolonga la excreción del germen. En Salmonella no complicada puede prolongar el estado de portador.</div>
+  </div>
+
+  <table class="tbl">
+    <tr><th>Agente / Situación</th><th>ATB indicado</th><th>Primera elección</th><th>Dosis y duración</th></tr>
+    <tr><td class="hl">Shigella (disentería)</td><td>✅ Siempre</td><td>Azitromicina (resistencia creciente a TMP-SMX)</td><td><span class="dosis">10–12 mg/kg/día</span> × 3 días</td></tr>
+    <tr><td class="hl">Salmonella no typhi — mayor de 3 meses sin factores de riesgo</td><td>❌ No</td><td>Observación — se resuelve sola</td><td>—</td></tr>
+    <tr><td class="hl">Salmonella — menor de 3 meses, inmunocomprometido, bacteremia</td><td>✅ Sí</td><td>Ceftriaxona IV</td><td><span class="dosis">50 mg/kg/día</span> × 7–10 días</td></tr>
+    <tr><td class="hl">Campylobacter (disentería)</td><td>✅ Si grave o inmunocomp.</td><td>Azitromicina</td><td><span class="dosis">10 mg/kg/día</span> × 3 días</td></tr>
+    <tr><td class="hl">Giardia lamblia</td><td>✅ Siempre</td><td>Tinidazol (una sola dosis)</td><td><span class="dosis">50 mg/kg</span> dosis única (máx 2 g)</td></tr>
+    <tr><td class="hl">E. histolytica (amebiasis)</td><td>✅ Siempre</td><td>Metronidazol + luego paromomicina</td><td>Metronidazol: <span class="dosis">35–50 mg/kg/día</span> × 7–10 días</td></tr>
+    <tr><td class="hl">Cólera</td><td>✅ Sí</td><td>Azitromicina (o doxiciclina en mayores)</td><td><span class="dosis">20 mg/kg</span> dosis única</td></tr>
+    <tr><td class="hl">Rotavirus / Norovirus / Adenovirus</td><td>❌ No</td><td>Rehidratación</td><td>—</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DIARREA — PROBIÓTICOS Y ALIMENTACIÓN
+═══════════════════════════════════════════════ -->
+<div id="dia-probioticos" class="section">
+  <div class="sec-header">
+    <div class="sec-badge dia-badge">Diarrea</div>
+    <h1>Probióticos y Alimentación durante la Diarrea</h1>
+  </div>
+
+  <h2>Alimentación — regla fundamental: NO ayunar</h2>
+  <p>El ayuno prolongado es contraproducente: retrasa la recuperación de las vellosidades intestinales, favorece la permeabilidad intestinal y contribuye a la desnutrición. La alimentación continua accelera la recuperación.</p>
+
+  <table class="tbl">
+    <tr><th>Tipo de paciente</th><th>Recomendación</th></tr>
+    <tr><td>Lactante con leche materna</td><td>✅ Continuar lactancia materna a libre demanda durante todo el episodio diarreico. La leche materna contiene IgA secretora, lactoferrina y prebióticos que aceleran la recuperación.</td></tr>
+    <tr><td>Lactante con fórmula</td><td>✅ Continuar con la misma fórmula. No es necesario cambiar a fórmula sin lactosa de rutina (solo si hay intolerancia secundaria a lactosa confirmada).</td></tr>
+    <tr><td>Niño que ya come sólidos</td><td>✅ Dieta normal para su edad. Pueden ofrecerse alimentos de fácil digestión (arroz, plátano, pollo hervido, zanahoria) pero NO es obligatorio restringir la dieta.</td></tr>
+    <tr><td>Alimentos a evitar</td><td>❌ Jugos de fruta, bebidas azucaradas, alimentos muy grasos o muy condimentados durante el episodio agudo.</td></tr>
+  </table>
+
+  <h2>Probióticos — Evidencia actual</h2>
+  <table class="tbl">
+    <tr><th>Microorganismo</th><th>Evidencia</th><th>Efecto</th></tr>
+    <tr><td class="hl">Lactobacillus rhamnosus GG (LGG)</td><td>⭐⭐⭐ La más fuerte</td><td>Reduce la duración de la diarrea en ~1 día y la intensidad. Mejor evidencia en diarrea por rotavirus.</td></tr>
+    <tr><td class="hl">Saccharomyces boulardii</td><td>⭐⭐ Buena</td><td>Reduce duración. Útil también en diarrea asociada a antibióticos.</td></tr>
+    <tr><td class="hl">Lactobacillus reuteri DSM 17938</td><td>⭐⭐ Buena</td><td>Reduce duración en rotavirus. Efecto modesto.</td></tr>
+    <tr><td class="hl">Bifidobacterium lactis / longum</td><td>⭐ Moderada</td><td>Menor evidencia individual, útil en mezclas.</td></tr>
+  </table>
+
+  <div class="alert info">
+    <span class="alert-icon">💊</span>
+    <div><strong>Zinc como adyuvante:</strong> La OMS recomienda zinc en todos los niños con diarrea aguda en países en desarrollo. Reduce la duración, la severidad y el riesgo de recurrencia en las siguientes 2–3 semanas. <br>Dosis: <span class="dosis">10 mg/día</span> en menores de 6 meses · <span class="dosis">20 mg/día</span> en mayores de 6 meses × 10–14 días.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DENGUE — CLASIFICACIÓN OMS 2009
+═══════════════════════════════════════════════ -->
+<div id="den-clasificacion" class="section">
+  <div class="sec-header">
+    <div class="sec-badge den-badge">Dengue</div>
+    <h1>Clasificación OMS/OPS 2009</h1>
+    <p>Ya no se usa "dengue hemorrágico". La clasificación actual tiene 3 categorías basadas en clínica y evolución.</p>
+  </div>
+
+  <div class="alert warning">
+    <span class="alert-icon">⚠️</span>
+    <div><strong>Sinaloa endémico:</strong> Culiacán, Mazatlán y Los Mochis concentran la mayoría de casos. Pico en julio–octubre (temporada de lluvias). El Aedes aegypti es el vector. Dengue serotipos 1 y 2 son los más frecuentes en el noroeste de México.</div>
+  </div>
+
+  <h2>Categoría 1 — Dengue SIN signos de alarma</h2>
+  <div class="score-item" style="margin-bottom:12px">
+    <h4>Criterios</h4>
+    <p>Vive o viajó a zona endémica + fiebre + 2 o más de los siguientes:</p>
+    <ul style="margin-top:6px">
+      <li>Náuseas y vómitos</li>
+      <li>Exantema (maculopapular, pruriginoso)</li>
+      <li>Mialgias y artralgias ("fiebre quebrantahuesos")</li>
+      <li>Prueba del torniquete positiva (≥20 petequias en 2.5 cm²)</li>
+      <li>Leucopenia</li>
+    </ul>
+    <p style="margin-top:8px"><strong>Plaquetas:</strong> pueden estar normales o levemente bajas. <strong>Hematocrito:</strong> normal.</p>
+  </div>
+
+  <h2>Categoría 2 — Dengue CON signos de alarma</h2>
+  <div class="alert danger">
+    <span class="alert-icon">🚨</span>
+    <div>
+      <strong>Los 7 signos de alarma — memorizar todos:</strong>
+      <ol style="margin-top:8px">
+        <li><strong>Dolor abdominal intenso</strong> o dolor a la palpación del abdomen</li>
+        <li><strong>Vómitos persistentes</strong> (≥3 en 1 hora o más de 5 en 6 horas)</li>
+        <li><strong>Acumulación de líquidos</strong> (ascitis, derrame pleural, edema)</li>
+        <li><strong>Sangrado de mucosas</strong> (epistaxis, gingivorragia, metrorragia)</li>
+        <li><strong>Letargia o irritabilidad</strong> — cambio del estado mental</li>
+        <li><strong>Hepatomegalia</strong> mayor de 2 cm por debajo del reborde costal</li>
+        <li><strong>Incremento brusco del hematocrito</strong> (≥20% sobre el basal) con descenso simultáneo de plaquetas</li>
+      </ol>
+    </div>
+  </div>
+  <p>Un solo signo de alarma es suficiente para clasificar como Categoría 2 y hospitalizar.</p>
+
+  <h2>Categoría 3 — Dengue GRAVE</h2>
+  <table class="tbl">
+    <tr><th>Criterio de dengue grave</th><th>Manifestación</th></tr>
+    <tr><td class="hl">Extravasación grave de plasma</td><td>Choque (PAS &lt;90 o &lt;percentil 5 para edad) o acumulación de líquidos con dificultad respiratoria</td></tr>
+    <tr><td class="hl">Sangrado grave</td><td>Hematemesis, melena, hematuria, sangrado SNC, sangrado que requiere transfusión</td></tr>
+    <tr><td class="hl">Compromiso grave de órgano</td><td>Daño hepático: AST o ALT ≥1000 UI/L · Miocarditis · Encefalitis · Falla renal aguda</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DENGUE — MANEJO DE LÍQUIDOS
+═══════════════════════════════════════════════ -->
+<div id="den-liquidos" class="section">
+  <div class="sec-header">
+    <div class="sec-badge den-badge">Dengue</div>
+    <h1>Manejo de Líquidos por Fase del Dengue</h1>
+    <p>El manejo de líquidos es completamente diferente en cada fase. El error más peligroso es dar líquidos en exceso en la fase de recuperación.</p>
+  </div>
+
+  <h2>Las 3 fases del dengue</h2>
+  <table class="tbl">
+    <tr><th>Fase</th><th>Días</th><th>¿Qué ocurre?</th><th>Riesgo principal</th></tr>
+    <tr><td class="hl">Febril</td><td>1–3</td><td>Viremia alta, fiebre alta (38.5–40°C), mialgias, cefalea. Plaquetas en descenso inicial.</td><td>Deshidratación por fiebre y vómitos. Fiebre alta.</td></tr>
+    <tr><td class="hl">Crítica</td><td>3–6</td><td>Fiebre baja o desaparece. Extravasación capilar → pérdida de plasma al espacio extravascular. Hematocrito sube, plaquetas caen bruscamente.</td><td>Choque por pérdida de plasma. Hemorragias.</td></tr>
+    <tr><td class="hl">Recuperación</td><td>6–7 en adelante</td><td>Reabsorción del líquido extravasado hacia el espacio intravascular. Plaquetas suben. Diuresis aumenta.</td><td>Sobrecarga hídrica si se siguen dando líquidos IV. Edema pulmonar, insuficiencia cardíaca.</td></tr>
+  </table>
+
+  <h2>Manejo de líquidos — Fase febril (días 1–3)</h2>
+  <p>El paciente generalmente está ambulatorio. Prioridad: <strong>hidratación oral adecuada para compensar las pérdidas por fiebre.</strong></p>
+  <ul>
+    <li>SRO o líquidos claros: <span class="dosis">mínimo 2 litros/día</span> en adultos; en niños según peso</li>
+    <li>Paracetamol para control de fiebre: <span class="dosis">10–15 mg/kg/dosis</span> c/6h</li>
+    <li><strong>NO aspirina ni AINEs</strong> — riesgo de sangrado por trombocitopenia</li>
+    <li>Signos de alarma a vigilar en casa: no orina en 4–6h, vómitos persistentes, dolor abdominal, inquietud o letargia</li>
+  </ul>
+
+  <h2>Manejo de líquidos — Fase crítica (días 3–6)</h2>
+  <div class="alert danger">
+    <span class="alert-icon">🔴</span>
+    <div><strong>Esta es la fase donde se mueren los pacientes. El manejo es con cristaloides IV y monitoreo estrecho del hematocrito.</strong></div>
+  </div>
+
+  <table class="tbl">
+    <tr><th>Situación</th><th>Solución</th><th>Velocidad inicial</th><th>Ajuste</th></tr>
+    <tr><td>Sin choque, con signos de alarma</td><td>SS 0.9% o Ringer Lactato</td><td><span class="dosis">5–7 mL/kg/hora</span></td><td>Reducir a 3–5 mL/kg/h si mejora. Suspender si hematocrito cae y diuresis es adecuada.</td></tr>
+    <tr><td>Choque compensado</td><td>SS 0.9% o Ringer Lactato</td><td><span class="dosis">10–20 mL/kg</span> en 15–30 min</td><td>Reevaluar. Si mejora → 10 mL/kg/h × 1h, luego reducir.</td></tr>
+    <tr><td>Choque descompensado</td><td>Ringer Lactato o coloides</td><td><span class="dosis">20 mL/kg</span> en 15 min</td><td>Si no responde en 2 ciclos → coloides (dextran, albúmina). Considerar UCI.</td></tr>
+  </table>
+
+  <p><strong>Monitoreo durante la fase crítica:</strong> Hematocrito cada 4–6 horas, diuresis horaria (meta: <span class="dosis">0.5–1 mL/kg/h</span>), signos vitales cada hora. El hematocrito es el mejor indicador para titular los líquidos: si sube → más líquidos; si baja con mejoría clínica → ir reduciendo.</p>
+
+  <h2>Manejo de líquidos — Fase de recuperación (día 6–7+)</h2>
+  <div class="alert danger">
+    <span class="alert-icon">⛔</span>
+    <div>
+      <strong>SUSPENDER o reducir drásticamente los líquidos IV.</strong> El plasma extravasado se reabsorbe masivamente → sobrecarga de volumen si se mantienen los líquidos IV. Esto causa edema pulmonar agudo e insuficiencia cardíaca.<br><br>
+      Signos de recuperación: fiebre desaparece, apetito regresa, diuresis aumenta, hematocrito cae a valores normales, plaquetas suben (generalmente llegan primero a 100,000 antes de normalizarse).
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DENGUE — HOSPITALIZACIÓN VS AMBULATORIO
+═══════════════════════════════════════════════ -->
+<div id="den-hospitalizacion" class="section">
+  <div class="sec-header">
+    <div class="sec-badge den-badge">Dengue</div>
+    <h1>¿Hospitalizar o Seguimiento Ambulatorio?</h1>
+  </div>
+
+  <h2>Seguimiento AMBULATORIO (Categoría 1 sin factores de riesgo)</h2>
+  <div class="alert success">
+    <span class="alert-icon">🏠</span>
+    <div>
+      <strong>Puede irse a casa si cumple todos:</strong>
+      <ul style="margin-top:6px">
+        <li>Dengue sin signos de alarma (Categoría 1)</li>
+        <li>Tolera líquidos por vía oral adecuadamente</li>
+        <li>Orina al menos 1 vez en las últimas 6 horas</li>
+        <li>No vive solo (tiene cuidador competente)</li>
+        <li>Puede regresar a consulta de control en 24–48 horas</li>
+        <li>No tiene comorbilidades de riesgo (obesidad, diabetes, embarazo, cardiopatía, menor de 1 año)</li>
+      </ul>
+    </div>
+  </div>
+
+  <p><strong>Control ambulatorio obligatorio:</strong> Hemograma con plaquetas y hematocrito cada 24 horas desde el día 3 hasta 24 horas después de que ceda la fiebre.</p>
+
+  <h2>HOSPITALIZAR (Categoría 2 y 3)</h2>
+  <table class="tbl">
+    <tr><th>Criterio</th><th>Nivel de atención</th></tr>
+    <tr><td>Cualquier signo de alarma (ver lista en clasificación)</td><td>Hospitalización general, área de observación</td></tr>
+    <tr><td>Factores de riesgo de evolución grave: obesidad, diabetes, menor de 1 año, embarazo, nefropatía, cardiopatía</td><td>Hospitalizar aunque sea Categoría 1</td></tr>
+    <tr><td>Plaquetas &lt;100,000/mm³</td><td>Hospitalizar para monitoreo estrecho</td></tr>
+    <tr><td>Hematocrito en ascenso (&gt;20% sobre basal)</td><td>Hospitalizar — inicio de extravasación</td></tr>
+    <tr><td>Choque (dengue grave Categoría 3)</td><td>UCI pediátrica</td></tr>
+    <tr><td>Sangrado espontáneo o manifestaciones de compromiso orgánico grave</td><td>UCI pediátrica</td></tr>
+  </table>
+
+  <div class="alert warning">
+    <span class="alert-icon">🩸</span>
+    <div><strong>¿Cuándo transfundir plaquetas?</strong> Solo si plaquetas &lt;10,000/mm³ sin sangrado, o &lt;20,000 con sangrado activo significativo. El dengue produce trombocitopenia transitoria que se recupera sola — transfundir de manera profiláctica no está recomendado por las guías OPS/OMS y puede generar daño.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DENGUE — DDX ARBOVIROSIS
+═══════════════════════════════════════════════ -->
+<div id="den-ddx" class="section">
+  <div class="sec-header">
+    <div class="sec-badge den-badge">Dengue</div>
+    <h1>Diagnóstico Diferencial — Arbovirosis</h1>
+    <p>Dengue, Chikungunya y Zika circulan en Sinaloa y pueden confundirse. Las diferencias clínicas son clave.</p>
+  </div>
+
+  <table class="tbl">
+    <tr><th>Característica</th><th style="color:var(--den-m)">Dengue</th><th style="color:var(--purple)">Chikungunya</th><th style="color:var(--ira-m)">Zika</th></tr>
+    <tr><td class="hl">Vector</td><td>Aedes aegypti</td><td>Aedes aegypti / albopictus</td><td>Aedes aegypti</td></tr>
+    <tr><td class="hl">Fiebre</td><td>Alta (39–40°C), brusca, "bifásica"</td><td>Alta (39–40°C), brusca</td><td>Baja-moderada o ausente</td></tr>
+    <tr><td class="hl">Artralgia / Artritis</td><td>Leve — mialgias predominan</td><td>✅ SEVERA, simétrica, bilateral, poliarticualr — puede durar meses o años (artritis crónica)</td><td>Leve</td></tr>
+    <tr><td class="hl">Exantema</td><td>Maculopapular tardío (día 3–5), pruriginoso, "islas de piel sana"</td><td>Maculopapular temprano (día 2–3)</td><td>✅ PROMINENTE, maculopapular temprano, pruriginoso, difuso — el síntoma más llamativo</td></tr>
+    <tr><td class="hl">Trombocitopenia</td><td>✅ Sí, frecuente y puede ser severa</td><td>Leve</td><td>Leve o ausente</td></tr>
+    <tr><td class="hl">Leucopenia</td><td>✅ Sí — dato de laboratorio clave</td><td>Leve</td><td>Leve</td></tr>
+    <tr><td class="hl">Conjuntivitis no purulenta</td><td>Rara</td><td>Rara</td><td>✅ Frecuente (50%)</td></tr>
+    <tr><td class="hl">Signos de alarma / Gravedad</td><td>✅ Extravasación, choque, sangrado, compromiso orgánico</td><td>Raro — complicaciones articulares crónicas</td><td>Raro en adultos inmunocompetentes</td></tr>
+    <tr><td class="hl">Riesgo especial</td><td>Choque y muerte en niños</td><td>Neonatos: enfermedad grave si madre con viremia en parto</td><td>⚠️ Síndrome de Guillain-Barré · Microcefalia y malformaciones en hijos de madres infectadas en 1er trimestre</td></tr>
+    <tr><td class="hl">Diagnóstico</td><td>NS1 (días 1–5) + IgM (día 5+) · PCR en fase aguda</td><td>PCR (fase aguda) · IgM (desde día 5)</td><td>PCR en sangre/orina (primeros 14 días) · IgM</td></tr>
+    <tr><td class="hl">Tratamiento</td><td>Soporte. Manejo de líquidos según fase. Paracetamol.</td><td>Soporte. Paracetamol. AINEs para artritis crónica post-chikungunya.</td><td>Soporte. Paracetamol. Evitar AINEs hasta descartar dengue.</td></tr>
+  </table>
+
+  <div class="alert info">
+    <span class="alert-icon">🔑</span>
+    <div>
+      <strong>Perlas clínicas para el diferencial:</strong>
+      <ul style="margin-top:6px">
+        <li><strong>Artralgia severa incapacitante</strong> → pensar Chikungunya primero</li>
+        <li><strong>Exantema prominente + conjuntivitis + embarazada</strong> → pensar Zika primero (notificación obligatoria)</li>
+        <li><strong>Plaquetas muy bajas + hematocrito subiendo + dolor abdominal</strong> → Dengue, es una emergencia</li>
+        <li>Las tres pueden coexistir o coinfectar (coinfección dengue + chikungunya reportada en Sinaloa)</li>
+        <li>Evitar AINEs y aspirina en las tres hasta descartar dengue por riesgo de sangrado</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+function show(id, el) {
+  // Hide all sections
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  // Remove active from all nav items
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  // Show target
+  document.getElementById(id).classList.add('active');
+  if (el) el.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// Topic accordion
+document.querySelectorAll('.topic-header').forEach(h => {
+  h.addEventListener('click', () => {
+    h.parentElement.classList.toggle('open');
+  });
+});
+</script>
+</body>
+</html>
